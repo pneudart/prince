@@ -3,6 +3,7 @@
 namespace Kodebyraaet\Prince;
 
 use File;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Illuminate\Http\Response;
 use Response as ResponseFacade;
@@ -155,7 +156,7 @@ class Prince implements PrinceInterface
     {
         $data = $this->generate();
 
-        File::put($path, $data);
+        Storage::put($path, $data);
 
         $this->reset();
 
